@@ -99,7 +99,7 @@ This step is done automatically by an Ethereum node, when your contract creation
 Deployment usually consists of multiple steps: preparing parameters, deploying auxiliary contracts, deploying main
 contracts, initializing contracts, etc. Scripting helps to automate these steps, and we'll write scripts in Solidity!
 
-Create `scripts/DeployDevelopment.sol` contract with this content:
+Create `scripts/DeployDevelopment.s.sol` contract with this content:
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.14;
@@ -184,7 +184,7 @@ console.log("Manager address", address(manager));
 
 Alright, let's run the script (ensure Anvil is running in another terminal window):
 ```shell
-$ forge script scripts/DeployDevelopment.s.sol --broadcast --fork-url http://localhost:8545 --private-key $PRIVATE_KEY
+$ forge script scripts/DeployDevelopment.s.sol:DeployDevelopment --broadcast --fork-url http://localhost:8545 --private-key $PRIVATE_KEY
 ```
 
 `--broadcast` enables broadcasting of transactions. It's not enabled by default because not every script sends
